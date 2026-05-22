@@ -9,7 +9,7 @@ class ChatService {
       final currentUserId = _supabase.auth.currentUser?.id;
       if (currentUserId == null) throw Exception('Not authenticated');
 
-      final response = await _supabase.rpc(
+      final response = await _supabase.rpc( 
         'get_or_create_conversation',
         params: {
           'user1_id': currentUserId,
